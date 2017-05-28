@@ -1,6 +1,8 @@
-import style from './styles/main.scss';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Home from './components/pages/Home';
 
-const app = document.getElementById('app');
-const words = document.createTextNode('Hello Ren');
-
-app.appendChild(words);
+ReactDOM.render(
+  <Home />,
+  document.getElementById('app')
+);

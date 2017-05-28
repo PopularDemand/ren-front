@@ -1,14 +1,17 @@
 const ExtractTextPlugin =  require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: [
+  'webpack-dev-server/client?http://localhost:3000',
+  'webpack/hot/only-dev-server',
     './src/index.js'
   ],
   module: {
     loaders: [{
       test: /\.jsx?$/,
       exclude: /node_modules/,
-      loader: 'babel-loader'
+      loader: 'react-hot-loader!babel-loader'
     }, {
       test: /\.scss$/,
       loaders: ExtractTextPlugin.extract('css-loader!sass-loader')
@@ -18,7 +21,8 @@ module.exports = {
     new ExtractTextPlugin({
       filename: 'main.css',
       allChunks: true
-    })
+    }),
+    new webpack.HotModuleReplacementPlugin()
   ],
   resolve: {
     extensions: ['.js', '.jsx']
@@ -30,6 +34,7 @@ module.exports = {
   },
   devServer: {
     contentBase: './dist',
+    hot: true,
     port: 3000
   }
 };
