@@ -38,11 +38,15 @@
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
     "immutable": "^3.8.1",
     "j-toker": "0.0.10-beta3",
     "lodash": "^4.17.4",
+    "pubsub-js": "^1.5.7",
     "react": "^15.5.4",
     "react-addons-test-utils": "^15.5.1",
-    "react-dom": "^15.5.4"
+    "react-dom": "^15.5.4",
+    "recompose": "^0.24.0"
   }
 }

@@ -10,7 +10,15 @@ const signUpProps = {
   passwordConfirmation: ''
 };
 
-ReactDOM.render(
-  <Home signUpData={signUpProps} />,
-  document.getElementById('app')
-);
+const Auth = require('j-toker');
+
+const promise = Auth.configure({
+  apiUrl: 'http://localhost:5000'
+});
+
+promise.always(function() {
+  ReactDOM.render(
+    <Home signUpData={signUpProps} />,
+    document.getElementById('app')
+  );
+});

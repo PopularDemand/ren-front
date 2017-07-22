@@ -3,13 +3,14 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
-  'webpack-dev-server/client?http://localhost:3000',
-  'webpack/hot/only-dev-server',
-    './src/index.js'
+    'webpack-dev-server/client?http://localhost:3000',
+    'webpack/hot/only-dev-server',
+    './src/index.js',
+    './src/styles/main.scss'
   ],
   module: {
     loaders: [{
-      test: /\.jsx?$/,
+      test: /\.(jsx|js)?$/,
       exclude: /node_modules/,
       loader: 'react-hot-loader!babel-loader'
     }, {
